@@ -9,19 +9,30 @@ This repository covers several important concepts in network programming and cyb
 
 ### Sockets and Their Importance
 Definition: Sockets are endpoints for sending and receiving data across a network.
+
 Usage: They enable the creation of networked applications by providing a way to establish connections and transfer data.
 Socket Module
+
 Purpose: Part of the Python standard library, it provides low-level networking interfaces.
+
 Key Functions:
 socket(): Create a new socket.
+
 bind(): Bind the socket to an address and port.
+
 listen(): Enable the server to accept connections.
+
 accept(): Accept a connection.
+
 connect(): Connect to a remote socket.
+
 send(): Send data.
+
 recv(): Receive data.
+
 close(): Close the socket.
-Example Scripts
+
+## Example Scripts
 
 ### TCP Client Example
 This script demonstrates a basic TCP client that connects to a specified IP address and port, receives data, and handles potential connection issues with exception handling and timeout settings.
