@@ -22,70 +22,14 @@ send(): Send data.
 recv(): Receive data.
 close(): Close the socket.
 Example Scripts
+
 TCP Client Example
 This script demonstrates a basic TCP client that connects to a specified IP address and port, receives data, and handles potential connection issues with exception handling and timeout settings.
-
-python
-```import socket
-
-def main():
-    ip = input("Please enter the IP: ")
-    port = str(input("Please enter the port: "))
-    banner(ip, port)
-
-def banner(ip, port):
-    s = socket.socket()
-    s.connect((ip, int(port)))
-    print(s.recv(1024))
-
-main()```
 
 Port Scanner
 This script performs a port scan on a target IP address to identify open ports, providing insights into available network services.
 
-python
-import socket
-
-def portScanner(port):
-    if s.connect_ex((host, port)):
-        print("The port is closed")
-    else:
-        print("The port is open")
-
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.settimeout(5)
-host = input("Please enter the IP you want to scan: ")
-port = int(input("Please enter the port you want to scan: "))
-portScanner(port)
-TCP Server Example
 This script sets up a TCP server that listens for incoming connections and sends a greeting message to connected clients.
-
-python
-
-import socket
-
-serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # IPv4 and TCP
-host = ''  # Listen on all available interfaces
-port = 444  # Ensure the port is open and not blocked by firewalls
-
-serversocket.bind((host, port))  # Bind the host and port to the socket object
-serversocket.listen(3)  # Set up the TCP listener
-
-print("Started Server")
-print(f"Server Listening on {host}: {port}")
-
-try:
-    while True:
-        clientsocket, address = serversocket.accept()
-        try:
-            print("Received connection from %s " % str(address))
-            message = 'Hello! Thank you for connecting to the server' + "\r\n"
-            clientsocket.send(message.encode('ascii'))
-        finally:
-            clientsocket.close()
-except KeyboardInterrupt:
-    print("\nServer has been interrupted. Server Socket Closing...")
-    serversocket.close()
 
 Setup and Installation
 To set up the environment and run these scripts, follow these steps:
