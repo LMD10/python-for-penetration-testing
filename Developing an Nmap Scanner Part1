@@ -1,0 +1,12 @@
+Developing an Nmap scanner
+* We are going to be using the python programming language tools to automate tasks and contribute to the penetration testing lifecycle
+* He is running this on kali linux
+
+What is the aim?
+* We are going to make a simple program which will ask the user for the foreign IP address that they want to scan 
+* It will ask them for the type of scan that they would want like for example a SYN scan or a UDP scan or a complete comprehensive scan - OS fingerprinting, service fingerprinting, aggressive scanning and SYN scanning and the default scripts that come with nmap
+
+How to do it
+1. The first thing he mentions is that we need to install an nmap module in the following way in the kali linux environment:
+pip3 install python-nmap
+2. Then he goes about creating it where I specify more details in the comments

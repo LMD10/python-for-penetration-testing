@@ -1,0 +1,33 @@
+* We are going to be creating a TCP server and client but for this one we look at server
+
+Sockets and their importance
+* They initialise connections and allow for the sending and the receiving of data 
+* Technical Definition: It is an internal endpoint for sending and recieving data 
+* Simple Definition: So then he compares this digital socket to an actual socket or outlet
+* Now you cant send power through the socker but only recieve it in the example of an actual electrical socket but a digital or network socket has the ability to both send and recieve information
+* Now it is considered and internal endpoint which means that it works internally
+
+What is the Socket Module?
+* It is part of the python standard library
+* It is a module which allows you to implement this kind of connection or sockets using different protocols
+* Now we are going to be following the TCP protocol but we also have others like the UDP 
+* Now in python if we want to use the socket module then we would need to import it:
+import socket 
+* From that library we need to call upon the socket function which you can do with:
+socket.socket()
+* Now within the socket function you need to specify the parameters of the function 
+
+What are the parameters?
+1. The socket family - AF_INET is what we will use. It specifies the protocol that will be used for communication. This would be either IPv4 or IPv6. Remember that TCP has many different ways of routing data through a network. AF_INET highlights IPv4 
+2. Socket Type - SOCK_STREAM or SOCK_DE_GRAM. These would depend on the type of connections that you would be using. TCP would mean your specifying connection oriented programming. TCP is a connection oriented protocol which involves you performing a three way handshake to initialise connection with a server and a client. For connectionless protocols like UDP you would use the socket type of DE_GRAM
+
+What are the methods that we will be using?
+1. bind() - Allos to bind the host and the port to a socket 
+2. listen() - Allows us to start the TCP listener
+3. accept() - Allows us to accept the tcp client information 
+4. send() - Allows us to send a TCP message 
+5. receive() - Allows us to recieve TCP messages 
+6. close() - Closes the socket ending the connection 
+7. gethostbyname() - It will get the address and other information that is specified 
+
+* He then goes into explaining how he creates it and the outcome is what we have in server.py

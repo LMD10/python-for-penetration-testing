@@ -1,0 +1,61 @@
+Introduction and SetUp
+* We are presented with a youtube video which goes into the setup process 
+* This is for the purposes of ethical hacking 
+
+What will be covered?
+1. Network Sockets - TCP Clients and Servers and UDP Clients and Servers
+2. NetCat Alternative - Build a netcat alternative 
+
+What is the development environment that will be used?
+* It will be Kali Linux 
+* He will be using visual code studio
+* It works with python 
+* He explains the process of getting kali linux
+
+How I went about installing Kali Linux
+1. I went to the offical kali liux website 
+2. I knew that I couldnt use a virtual machine as its too taxing and the others were just as taxing or I wasnt too familiar with
+3. I decided to go with the "containers" option
+4. I have docker installed in my system
+5. Then I had to pull the docker container from the official Kali Linux Docker Images
+6. You can find the official image here: https://www.kali.org/docs/containers/official-kalilinux-docker-images/
+7. Then I used the following command in my windows terminal:
+docker pull kalilinux/kali-rolling
+* In Docker we follow a hieracrchy system in this order:
+Docker Files -> Docker Image -> Docker Container 
+* Now there is a lot to research on this but that is done somewhere else but the point is that the command pulls the image of the container that is to say the representation of the Docker Files
+* A Docker Image is not the same as a Docker Container 
+8. Then I would run the kali linux image:
+docker run -t -i kalilinux/kali-rolling /bin/bash
+* This command would create a docker instance or docker container and will automatically run that container
+9. The result should be that you have access to the Kali Linux CLI
+10. Make sure that you have python installed in this container environment by running the following commands:
+apt update
+apt install python3
+python3 --version
+
+How do you integrate VScode from Windows to Kali Linux Docker Container Environment
+1. You would need to first open the folder that you want to be running your scripts
+2. You want to find out the container id that you are running 
+3. To do it you would need to run this on your windows terminal:
+docker ps -a 
+4. You can do this by going onto VScode and trying to find on the extensions "Dev Containers"
+5. Then you want to open your terminal and type the following code:
+docker start -ai <container_id>
+FOR ME RUN THIS ON TERMINAL TO START KALI ON VSCODE TERMINAL If you have created a container already:
+docker start -ai 448a69d582ac
+TO EXIT THE ENVIRONMENT YOU WOULD NEED TO TYPE:
+exit  
+6. The result is that you have the Kali Linux Container Environment in your VScode terminal
+7. Now this completes the part where you have kali on your vscode terminal but its not yet integrated 
+8. It is hard to explain but basically any operation that you do in the kali terminal will not yet affect the vscode environment
+9. Now in order for us to integrate we need to go to the Remote Explorer Icon and you need to find the container which I think should be running and select the icon which looks like a folder called "Attatch in New Window"
+10. Then from what I understand it would allow for you to use VScode environment along with the kali environment 
+
+How to run the simple TCP client server communication?
+1. So the code is shown in this directory 
+2. Essentially all you need to do is just run the server by the command: 
+python3 server.py
+3. When the server is running it will create the port 444 and so in the ports tab of what I will call the terminal arena for fun but really its the thing that you call when you do "Ctrl + Shift + m"
+4. Then once its running you want to create another terminal in the same directory by clicking + or pressing "Ctrl + Shift + '" and run:
+python3 TCPClient.py

@@ -1,0 +1,25 @@
+Development for Nmap Scanner
+* He implements some code which goes into the different cases or responses that can be given by the user
+* When response is 1 we want to initialise the scanner variable to use the nmap class which basically starts the scan
+* We need to providce some arguments regarding: 
+1. The number of ports that we want to scan 
+2. And the type of scan 
+* He creates a prints which is supposed to tell the version of nmap
+* He then uses scanner.scan() in order to scan the Ip address that the user would input
+* Then he provides the next argument to being the amount of ports to scan 
+* The next argument is verbose and to perform a SYN ACK scan through the command line flags. For SYN ACK it would be -sS
+* We want to display the scan information and we can do this through the scanner.scaninfo() method 
+* Now we need to use another method which would determine whether its connected to the internet or its reachable or unreachable
+* We would be using the scanner.state()
+* So we do it in the following way 
+scanner[ip_addr].state()
+* This would show if the IP address is up or down so that the user would know whether its online or offline
+* We would now need to print all of the prototcols 
+* TCP or UDP is essentially what you would be printing out 
+print(scanner[ip_addr].all_protocols())
+* Now the final step is to determine the number of open ports 
+* We would be using the keys method
+* This would return all of the open ports in the specified range from before 
+print("Open Ports: ", scanner[ip_addr]['tcp'].keys())
+* He then goes over the same process for the other responses except there are some changes to the others 
+* up = online and down = offline 

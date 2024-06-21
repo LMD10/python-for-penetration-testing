@@ -1,0 +1,36 @@
+Developing a port scanner
+* He is using gitpod which is an ide that you can use for github
+* He mentions that the target website that we are going to be port scanning is: Hack This Site!
+* We are going to be using the IP address in order for us to perform our scan 
+NOTE THAT WE ARE NOT USING GITPOD AS WE ARE TRYING TO ABSORB MORE THE KNOWLEDGE AND WE DONT WANT TO OVERWORK OUR MACHINE AND WE WANT TO COMPLETE THIS MODULE QUICKLY BUT IT IS RECOMMENDED THAT WE LEAR TO USE GITPOD
+
+What is the main aim?
+* It is to create a port scanner which scans a particular IP and port and would check if the port is open 
+* He mostly goes through the same process that was outlined on TCP Client Communication but instead of scanning an IP and port of a given network we are targeting a specific site which in this case was: 
+https://www.hackthissite.org
+* Now we need to determine what the ip is of the website that we want to scan. In this case we would need to send a simple ping to the hackthesite.org in the following way:
+ping hackthesite.org 
+C:\Users\liamp>ping hackthissite.org
+
+Pinging hackthissite.org [137.74.187.104] with 32 bytes of data:Reply from 137.74.187.104: bytes=32 time=21ms TTL=51
+Reply from 137.74.187.104: bytes=32 time=17ms TTL=51
+Reply from 137.74.187.104: bytes=32 time=19ms TTL=51
+Reply from 137.74.187.104: bytes=32 time=13ms TTL=51
+
+Ping statistics for 137.74.187.104:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 13ms, Maximum = 21ms, Average = 17ms
+* You can also try this on kali linux aswell just make sure that the ping utility is installed on your system 
+* With this information you can start scanning different port numbers to check for which are open 
+
+Is an Open Port a vulnerability?
+* Not really
+* It would mostly depend on more specific circumstances and factors:
+1. The service which is running behind that port, the configuration of that service and how well that service is updated or maintained 
+* Basically ports which are forgotten and is not taken care of is something that hackers can take advantage of 
+
+A new method
+* We are introduced with a new method 
+1. connect() - It is considered a blocking method. This means that until a connection is established. This means it will not proceed to the next line and if for any case an error occurs in the connection then it would trigger an exception called socker.error or its subclasses
+s.connect_ex() - It is nonblocking which means that it will output the error code instead of rasining an exception denoted by an integer to tell its failure  

@@ -1,0 +1,36 @@
+* He is using GitPod as the ide he is using for this example
+* He goes about explaining the example he is doing 
+1. He would import the socket 
+2. He calls upon the socket module from the socket class 
+3. We would prompt the user to input the ipd address
+4. Then he would go about creating the port input statement since we would need to pass that as a string
+5. Then he passes in the parameters that will be passed into the socket through the connect method
+6. He then mentions that we would need to print out the amount of data that would be recieved 
+7. He would then run the code which would ask for the input but when it is given it would head into an error due to the fact that the data type of the port is incorrect 
+8. The port parameter has to be converted into an integer 
+9. He then rewrites the script
+10. He defines the main function which would prompt the user to input the ip and the port 
+import socket
+def main():
+    ip = input("Please enter the IP: ")
+    port = str(input("Please enter the port: "))
+    banner(ip, port)
+11. He then goes into defining another function called banner
+12. The banner which would pass ip and port as arguments
+def banner(ip, port):
+    s = socket.socket()
+    s.connect((ip, int(port)))
+    print(s.recv(1024))
+    
+main()
+13. The idea is that the main function will prompt and then after it would start the banner function. The banner function would connect the ip and the port to the socket and then print out the socket information that is recieved
+14. He then runs the optimised script
+15. He mentions that it would be important to be using exception handling in the case where you dont know what data you are going to expect 
+16. He gets a message where the connection is refused 
+17. So he goes back into the code and sets an exception handler function in the form of 
+s.settimeout(5)
+* This basically specifies that if the script is not run in 5 seconds then exit the script 
+18. When he ran the script he noticed that the response would give him the SSH but he wanted to modify the response 
+19. The way he does this is by using the strip function where he specifies that the letter "b" should be removed 
+print(s.recv(1024).strip('b'))
+ 

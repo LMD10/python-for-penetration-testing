@@ -1,0 +1,18 @@
+TCP Client
+* gethostname() - It is considered good programming practice as you need to knwo the process of getting the IP address of the server. It gets the IP address of the host or the server
+* He mentions that we would want to be using the encode function to avoid any errors 
+* encode() - A parameter can be passed specifying the encoding type
+
+How do we do it?
+* There are not really any new functions involved excpet for maybe:
+1. encode() -
+2. decode() -
+* We import the socket 
+* We then create the client socket object with the same parameters as the one in the server 
+* We need to make sure that the client does not the adress of the server 
+* We then conncet to the socket and we would do that with the connect() fuinction from the clientsocket taken in as parameters the host or server address and the port 
+* Now before in the server we encoded the message. So we need to recieve the message
+* We can then use the recv() function and specify the buffer size which specifies the max amount of data that can pass through the port 
+* We can use the same unit of factorisation to increase to like 2048
+* Since we have recieved then now we need to decode the message
+* He then closes the clientsocket before printing the decoded message
